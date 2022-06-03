@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .container1 {
+            width: 90vw;
+            margin: auto;
+        }
+
+        .materialdata {
+            width: 90vw;
+            margin: auto;
+        }
+
+        #flush-collapseOne{
+            background-color:black;
+            color: white;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="success_tech">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="success_tech">Dashboard</a>
+                    <a class="nav-link" href="/create_job">Create Job</a>
+                    <a class="nav-link" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <h1>create a new job</h1>
+    <div class="container1">
+        <form class="row g-3" action="/process_create_job" method="post">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Job Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="col-md-6">
+                <label for="total_cost" class="form-label">Total Cost</label>
+                <input type="number" class="form-control" name="total_cost">
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" name="address" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="address2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="address_city" class="form-label">City</label>
+                <input type="text" class="form-control" name="address_city">
+            </div>
+            <div class="col-md-4">
+                <label for="address_state" class="form-label">State</label>
+                <select name="address_state" class="form-select">
+                    <option selected>Choose </option>
+                    <option> Alabama </option>
+                    <option> Alaska </option>
+                    <option> Arizona </option>
+                    <option> Arkansas </option>
+                    <option> California </option>
+                    <option> Colorado </option>
+                    <option> Connecticut </option>
+                    <option> Delaware </option>
+                    <option> Florida </option>
+                    <option> Georgia </option>
+                    <option> Hawaii </option>
+                    <option> Idaho </option>
+                    <option> Illinois </option>
+                    <option> Indiana </option>
+                    <option> Iowa </option>
+                    <option> Kansas </option>
+                    <option> Kentucky </option>
+                    <option> Louisiana </option>
+                    <option> Maine </option>
+                    <option> Maryland </option>
+                    <option> Massachusetts </option>
+                    <option> Michigan </option>
+                    <option> Minnesota </option>
+                    <option> Mississippi </option>
+                    <option> Missouri </option>
+                    <option> Montana </option>
+                    <option> Nebraska </option>
+                    <option> Nevada </option>
+                    <option> New Hampshire </option>
+                    <option> New Jersey </option>
+                    <option> New Mexico </option>
+                    <option> New Mexico </option>
+                    <option> North Carolina </option>
+                    <option> North Dakota </option>
+                    <option> Ohio </option>
+                    <option> Oklahoma </option>
+                    <option> Oregon </option>
+                    <option> Pennsylvania </option>
+                    <option> Rhode Island </option>
+                    <option> South Carolina </option>
+                    <option> South Dakota </option>
+                    <option> Tennessee </option>
+                    <option> Texas </option>
+                    <option> Utah </option>
+                    <option> Vermont </option>
+                    <option> Virginia </option>
+                    <option> Washington </option>
+                    <option> West Virginia </option>
+                    <option> Wisconsin </option>
+                    <option> Wyoming </option>
+                    <option> </option>
+
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="address_zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" name="address_zip" placeholder="zip code">
+            </div>
+            <div class="col-12">
+            </div>
+            <!-- accordian section for all my measurements and what not -->
+            <div class="accordion" id="accordionFlushExample">
+                <div class="accordion-item ">
+                    <h2 class="accordion-header " id="flush-headingOne">
+                        <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Bedrooms
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="col-md-6">
+                                <h4>Please round all numbers to the nearest foot</h4>
+                                <label for="bedroom1" class="form-label">Bedroom 1:</label> <br>
+                                <label for="bedroom1" class="form-label">length:</label>
+                                <input type="number" class="form-control" name="bedroom1_length" value="0">
+                                <label for="bedroom1" class="form-label">width:</label>
+                                <input type="number" class="form-control" name="bedroom1_width" value="0">
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom2" class="form-label">Bedroom 2:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom2_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom2_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom3" class="form-label">Bedroom 3:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom3_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom3_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom4" class="form-label">Bedroom 4:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom4_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom4_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom5" class="form-label">Bedroom 5:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom5_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom5_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom6" class="form-label">Bedroom 6:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom6_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom6_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom7" class="form-label">Bedroom 7:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom7_width" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom7_length" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom8" class="form-label">Bedroom 8:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom8_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom8_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom9" class="form-label">Bedroom 9:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom9_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom9_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bedroom10" class="form-label">Bedroom 10:</label> <br>
+                                <label for="bedroom2" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bedroom10_length" value="0">
+                                <label for="bedroom2" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bedroom10_width" value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionFlushExample">
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Living Areas
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h4>Please round all numbers to the nearest foot</h4>
+                                <label for="living_areas1" class="form-label">Living areas 1:</label> <br>
+                                <label for="living_areas1_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="living_areas1_length" value="0">
+                                <label for="living_areas1_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="living_areas1_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="living_areas2" class="form-label">Living areas 2:</label> <br>
+                                <label for="living_areas2_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="living_areas2_length" value="0">
+                                <label for="living_areas2_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="living_areas2_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="living_areas3" class="form-label">Living areas 3:</label> <br>
+                                <label for="living_areas3_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="living_areas3_length" value="0">
+                                <label for="living_areas3_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="living_areas3_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="living_areas4" class="form-label">Living areas 4:</label> <br>
+                                <label for="living_areas4_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="living_areas4_length" value="0">
+                                <label for="living_areas4_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="living_areas4_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="living_areas5" class="form-label">Living areas 5:</label> <br>
+                                <label for="living_areas5_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="living_areas5_length" value="0">
+                                <label for="living_areas5_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="living_areas5_width" value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionFlushExample">
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Kitchen
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <h4>Please round all numbers to the nearest foot</h4>
+                                <label for="kitchen1" class="form-label">Kitchen 1:</label> <br>
+                                <label for="kitchen1_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="kitchen1_length" value="0">
+                                <label for="kitchen1_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="kitchen1_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="kitchen2" class="form-label">Kitchen 2:</label> <br>
+                                <label for="kitchen2_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="kitchen2_length" value="0">
+                                <label for="kitchen2_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="kitchen2_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="kitchen3" class="form-label">Kitchen 3:</label> <br>
+                                <label for="kitchen3_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="kitchen3_length" value="0">
+                                <label for="kitchen3_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="kitchen3_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="kitchen4" class="form-label">Kitchen 4:</label> <br>
+                                <label for="kitchen4_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="kitchen4_length" value="0">
+                                <label for="kitchen4_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="kitchen4_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="kitchen5" class="form-label">Kitchen 5:</label> <br>
+                                <label for="kitchen5_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="kitchen5_length" value="0">
+                                <label for="kitchen5_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="kitchen5_width" value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionFlushExample"></div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingfour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapsefour" aria-expanded="false"
+                                aria-controls="flush-collapsefour">
+                                Bathrooms
+                            </button>
+                        </h2>
+                        <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="col-md-6">
+                                <h4>Please round all numbers to the nearest foot</h4>
+                                <label for="bathroom1" class="form-label">Bathroom 1:</label> <br>
+                                <label for="bathroom1_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" value="0" name="bathroom1_length">
+                                <label for="bathroom1_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom1_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom2" class="form-label">Bathroom 2:</label> <br>
+                                <label for="bathroom2_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom2_length" value="0">
+                                <label for="bathroom2_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom2_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom3" class="form-label">Bathroom 3:</label> <br>
+                                <label for="bathroom3_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom3_length" value="0">
+                                <label for="bathroom3_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom3_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom4" class="form-label">Bathroom 4:</label> <br>
+                                <label for="bathroom4_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom4_length" value="0">
+                                <label for="bathroom4_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom4_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom5" class="form-label">Bathroom 5:</label> <br>
+                                <label for="bathroom5_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom5_length" value="0">
+                                <label for="bathroom5_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom5_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom6" class="form-label">Bathroom 6:</label> <br>
+                                <label for="bathroom6_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom6_length" value="0">
+                                <label for="bathroom6_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom6_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom7" class="form-label">Bathroom 7:</label> <br>
+                                <label for="bathroom7_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom7_length" value="0">
+                                <label for="bathroom7_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom7_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom8" class="form-label">Bathroom 8:</label> <br>
+                                <label for="bathroom8_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom8_length" value="0">
+                                <label for="bathroom8_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom8_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom9" class="form-label">Bathroom 9:</label> <br>
+                                <label for="bathroom9_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom9_length" value="0">
+                                <label for="bathroom9_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom9_width" value="0">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="bathroom10" class="form-label">Bathroom 10:</label> <br>
+                                <label for="bathroom10_length" class="form-label">Length:</label>
+                                <input type="number" class="form-control" name="bathroom10_length" value="0">
+                                <label for="bathroom10_width" class="form-label">Width:</label>
+                                <input type="number" class="form-control" name="bathroom10_width" value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionFlushExample"></div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingfive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapsefive">
+                            Dining Rooms
+                        </button>
+                    </h2>
+                    <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <h4>Please round all numbers to the nearest foot</h4>
+                            <label for="dining_room1" class="form-label">Dining Room 1:</label> <br>
+                            <label for="dining_room1_length" class="form-label">Length:</label>
+                            <input type="number" class="form-control" name="dining_room1_length" value="0">
+                            <label for="dining_room1_width" class="form-label">Width:</label>
+                            <input type="number" class="form-control" name="dining_room1_width" value="0">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dining_room2" class="form-label">Dining Room 2:</label> <br>
+                            <label for="dining_room2_length" class="form-label">Length:</label>
+                            <input type="number" class="form-control" name="dining_room2_length" value="0">
+                            <label for="dining_room2_width" class="form-label">Width:</label>
+                            <input type="number" class="form-control" name="dining_room2_width" value="0">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dining_room3" class="form-label">Dining Room 3:</label> <br>
+                            <label for="dining_room3_length" class="form-label">Length:</label>
+                            <input type="number" class="form-control" name="dining_room3_length" value="0">
+                            <label for="dining_room3_width" class="form-label">Width:</label>
+                            <input type="number" class="form-control" name="dining_room3_width" value="0">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dining_room4" class="form-label">Dining Room 4:</label> <br>
+                            <label for="dining_room4_length" class="form-label">Length:</label>
+                            <input type="number" class="form-control" name="dining_room4_length" value="0">
+                            <label for="dining_room4_width" class="form-label">Width:</label>
+                            <input type="number" class="form-control" name="dining_room4_width" value="0">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="dining_room5" class="form-label">Dining Room 5:</label> <br>
+                            <label for="dining_room5_length" class="form-label">Length:</label>
+                            <input type="number" class="form-control" name="dining_room5_length" value="0">
+                            <label for="dining_room5_width" class="form-label">Width:</label>
+                            <input type="number" class="form-control" name="dining_room5_width" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div> <br> <br>
+    <!-- end of all the accordian nonsinse -->
+    <!-- <div class="col-md-6">
+        <label for="total_square_foot" class="form-label">Total Square Feet </label>
+        <input type="number" class="form-control" name="total_square_foot">
+    </div> <br> <br> -->
+    <!-- customer request box -->
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" name="customer_request"></textarea>
+        <label for="customer_request">Customer Request</label>
+    </div>
+    <br><br>
+    <!-- end customer request box -->
+    <!-- where you uplaod pictures -->
+    <input name="file" type="file" class="file-upload-input" onchange="readURL(this)" accept="Image/*"><br><br>
+    <!-- end where you upload pictures -->
+    <!-- material data start -->
+    <div class="materialdata">
+        <div class="col-md-6">
+            <label for="material_cost" class="form-label">Material Cost</label>
+            <input type="text" class="form-control" name="material_cost">
+        </div>
+        <div class="col-md-6">
+            <label for="material_supplier" class="form-label">Material Supplier</label>
+            <input type="text" class="form-control" name="material_supplier">
+        </div>
+        <div class="col-md-6">
+            <label for="order_date_material" class="form-label">Date Ordered</label>
+            <input type="date" class="form-control" name="order_date_material">
+        </div>
+        <div class="col-md-6">
+            <label for="pick_up_material" class="form-label">Pickup Date</label>
+            <input type="date" class="form-control" name="pick_up_material">
+        </div>
+        <div class="col-md-6">
+            <label for="labor_cost" class="form-label">Labor Cost</label>
+            <input type="text" class="form-control" name="labor_cost">
+        </div> <br><br>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" name="material_ordered_list"
+                style="height: 200px"></textarea>
+            <label for="material_ordered_list">List of Ordered Material</label>
+        </div>
+    </div> <br>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Create New Job</button>
+    </div>
+    </form>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

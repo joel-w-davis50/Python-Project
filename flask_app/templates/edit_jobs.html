@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        h1{
+            text-align: center;
+        }
+        
+        .container1 {
+            width: 90vw;
+            margin: auto;
+        }
+
+        .materialdata {
+            width: 90vw;
+            margin: auto;
+        }
+
+        #flush-collapseOne{
+            background-color:black;
+            color: white;
+        }
+        
+    
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="success_tech">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/success_tech">Dashboard</a>
+                    <a class="nav-link" href="/create_job">Create Job</a>
+                    <a class="nav-link" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <h1>edit one job details</h1>
+    <div class="container1">
+        <form class="row g-3" action="/update_job" method="post">
+            <input type="hidden" name="job_id" value="{{job.id}}">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Job Name</label>
+                <input type="text" class="form-control" name="name" value='{{job.name}}' >
+            </div>
+            <div class="col-md-6">
+                <label for="total_cost" class="form-label">Total Cost</label>
+                <input type="number" class="form-control" name="total_cost" value="{{job.total_cost}}" >
+            </div>
+            <div class="col-12">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" name="address" value="{{job.address}}" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+                <label for="address2" class="form-label">Address 2</label>
+                <input type="text" class="form-control" id="address2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+                <label for="address_city" class="form-label">City</label>
+                <input type="text" class="form-control" value="{{job.address_city}}" name="address_city">
+            </div>
+            <div class="col-md-4">
+                <label for="address_state" class="form-label">State</label>
+                <select name="address_state" value="{{job.address_state}}" class="form-select">
+                    <option selected>{{job.address_state}} </option>
+                    <option> Alabama </option>
+                    <option> Alaska </option>
+                    <option> Arizona </option>
+                    <option> Arkansas </option>
+                    <option> California </option>
+                    <option> Colorado </option>
+                    <option> Connecticut </option>
+                    <option> Delaware </option>
+                    <option> Florida </option>
+                    <option> Georgia </option>
+                    <option> Hawaii </option>
+                    <option> Idaho </option>
+                    <option> Illinois </option>
+                    <option> Indiana </option>
+                    <option> Iowa </option>
+                    <option> Kansas </option>
+                    <option> Kentucky </option>
+                    <option> Louisiana </option>
+                    <option> Maine </option>
+                    <option> Maryland </option>
+                    <option> Massachusetts </option>
+                    <option> Michigan </option>
+                    <option> Minnesota </option>
+                    <option> Mississippi </option>
+                    <option> Missouri </option>
+                    <option> Montana </option>
+                    <option> Nebraska </option>
+                    <option> Nevada </option>
+                    <option> New Hampshire </option>
+                    <option> New Jersey </option>
+                    <option> New Mexico </option>
+                    <option> New Mexico </option>
+                    <option> North Carolina </option>
+                    <option> North Dakota </option>
+                    <option> Ohio </option>
+                    <option> Oklahoma </option>
+                    <option> Oregon </option>
+                    <option> Pennsylvania </option>
+                    <option> Rhode Island </option>
+                    <option> South Carolina </option>
+                    <option> South Dakota </option>
+                    <option> Tennessee </option>
+                    <option> Texas </option>
+                    <option> Utah </option>
+                    <option> Vermont </option>
+                    <option> Virginia </option>
+                    <option> Washington </option>
+                    <option> West Virginia </option>
+                    <option> Wisconsin </option>
+                    <option> Wyoming </option>
+                    <option> </option>
+
+                </select>
+            </div><br>
+            <div class="col-md-2">
+                <label for="address_zip" class="form-label">Address Zip:</label>
+                <input type="text" class="form-control" value="{{job.address_zip}}" name="address_zip" placeholder="zip code">
+            </div><br>
+            <div class="col-md-2">
+                <label for="bedrooms" class="form-label">Total Sqaure Foot for Bedrooms:</label>
+                <input type="text" class="form-control" value="{{job.bedrooms}}" name="bedrooms" placeholder="zip code">
+            </div><br>
+            <div class="col-md-2">
+                <label for="livingareas" class="form-label">Total Square Foot for Living Areas: </label>
+                <input type="text" class="form-control" value="{{job.livingareas}}" name="livingareas" placeholder="zip code">
+            </div>
+            <div class="col-md-2">
+                <label for="kitchen" class="form-label">Total Square Foot for Kitchen</label>
+                <input type="text" class="form-control" value="{{job.kitchen}}" name="kitchen" placeholder="zip code">
+            </div>
+            <div class="col-md-2">
+                <label for="bathrooms" class="form-label">Total Square Foot for Bathrooms</label>
+                <input type="text" class="form-control" value="{{job.bathrooms}}" name="bathrooms" placeholder="zip code">
+            </div>
+            <div class="col-md-2">
+                <label for="dinning_room" class="form-label">Total Square Foot for Dining Rooms</label>
+                <input type="text" class="form-control" value="{{job.dinning_room}}" name="dinning_room" placeholder="zip code">
+            </div>
+            <!-- <div class="col-md-2">
+                <label for="total_square_foot" class="form-label">Total Square Foot:</label>
+                <input type="text" class="form-control" value="{{job.total_square_foot}}" name="total_square_foot" placeholder="zip code">
+            </div> -->
+            <div class="col-12">
+            </div>
+            <!-- accordian section for all my measurements and what not -->
+    <!-- <div class="col-md-6">
+        <label for="total_square_foot" class="form-label">Total Square Feet </label>
+        <input type="number" class="form-control" name="total_square_foot">
+    </div> <br> <br> -->
+    <!-- customer request box -->
+    <div class="form-floating">
+        <textarea class="form-control"  placeholder="Leave a comment here" name="customer_request"></textarea>
+        <label for="customer_request">{{job.customer_request}}</label>
+    </div>
+    <br><br>
+    <!-- end customer request box -->
+    <!-- where you uplaod pictures -->
+    <input name="file" type="file" class="file-upload-input" onchange="readURL(this)" accept="Image/*"><br><br>
+    <!-- end where you upload pictures -->
+    <!-- material data start -->
+    <div class="materialdata">
+        <div class="col-md-6">
+            <label for="material_cost" class="form-label">Material Cost</label>
+            <input type="text" value="{{job.material_cost}}" class="form-control" name="material_cost">
+        </div>
+        <div class="col-md-6">
+            <label for="material_supplier" class="form-label">Material Supplier</label>
+            <input type="text" value="{{job.material_supplier}}" class="form-control" name="material_supplier">
+        </div>
+        <div class="col-md-6">
+            <label for="order_date_material" class="form-label">Date Ordered</label>
+            <input type="date" value="{{job.order_date_material}}" class="form-control" name="order_date_material">
+        </div>
+        <div class="col-md-6">
+            <label for="pick_up_material" class="form-label">Pickup Date</label>
+            <input type="date" class="form-control" name="pick_up_material">
+        </div>
+        <div class="col-md-6">
+            <label for="labor_cost" class="form-label">Labor Cost</label>
+            <input type="text" value="{{job.labor_cost}}" class="form-control" name="labor_cost">
+        </div> <br><br>
+        <div class="form-floating">
+            <textarea class="form-control" value={{job.material_ordered_list}} placeholder="Leave a comment here" name="material_ordered_list"
+                style="height: 200px"></textarea>
+            <label for="material_ordered_list">{{job.material_ordered_list}}</label>
+        </div>
+    </div> <br>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+    </form>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
